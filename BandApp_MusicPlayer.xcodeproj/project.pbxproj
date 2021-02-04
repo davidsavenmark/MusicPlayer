@@ -13,6 +13,7 @@
 		9C3F965325CB409200106299 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C3F965225CB409200106299 /* Preview Assets.xcassets */; };
 		9C3F965F25CB409200106299 /* BandApp_MusicPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F965E25CB409200106299 /* BandApp_MusicPlayerTests.swift */; };
 		9C3F966A25CB409200106299 /* BandApp_MusicPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F966925CB409200106299 /* BandApp_MusicPlayerUITests.swift */; };
+		9CBE603225CC973600A84F63 /* BlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBE603125CC973600A84F63 /* BlurEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		9C3F966525CB409200106299 /* BandApp_MusicPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BandApp_MusicPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3F966925CB409200106299 /* BandApp_MusicPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandApp_MusicPlayerUITests.swift; sourceTree = "<group>"; };
 		9C3F966B25CB409200106299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CBE603125CC973600A84F63 /* BlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				9C3F964B25CB408D00106299 /* BandApp_MusicPlayerApp.swift */,
 				9C3F964D25CB408D00106299 /* ContentView.swift */,
+				9CBE603125CC973600A84F63 /* BlurEffect.swift */,
 				9C3F964F25CB409200106299 /* Assets.xcassets */,
 				9C3F965425CB409200106299 /* Info.plist */,
 				9C3F965525CB409200106299 /* BandApp_MusicPlayer.entitlements */,
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBE603225CC973600A84F63 /* BlurEffect.swift in Sources */,
 				9C3F964E25CB408D00106299 /* ContentView.swift in Sources */,
 				9C3F964C25CB408D00106299 /* BandApp_MusicPlayerApp.swift in Sources */,
 			);
