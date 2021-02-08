@@ -63,7 +63,7 @@ struct ContentView: View {
                     LazyHStack{
                             ForEach(self.albums, id:\.self, content: {
                             album in
-                                AlbumArt(album: album).onTapGesture {
+                                AlbumArt(album: album, isWithText: true).onTapGesture {
                                     self.currentAlbum = album
                                 }
                     })
@@ -81,7 +81,7 @@ struct ContentView: View {
                     id: \.self,
                     content: {
                     song in
-                        SongCell(song: song)
+                        SongCell(album: currentAlbum ?? albums.first!, song: song)
                 })
                     
                 }
@@ -94,42 +94,51 @@ struct ContentView: View {
 
 struct AlbumArt : View{
     var album : Album
+    var isWithText : Bool
     var body: some View {
         ZStack (alignment: .bottom, content: {
-            /*@START_MENU_TOKEN@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
         
             Image(album.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 170, height: 200, alignment: .center)
-            ZStack{
+            
+            if isWithText == true {
+            ZStack {
                 Blur(style: .dark)
                 Text(album.name).foregroundColor(.white)
             }.frame(height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        }).frame(width: 170, height: 200,alignment:
-                    /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).clipped().cornerRadius(20).shadow(radius: 10).padding(20)
+                
+        }
+    }).frame(width: 170, height: 200,alignment: .center) .clipped().cornerRadius(20).shadow(radius: 10).padding(20)
+            
                 
     }
 }
 
 struct SongCell : View{
+    var album : Album
     var song : Song
     var body: some View{
-        HStack{
-            ZStack{
-                Circle().frame(width: 60, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                Circle().frame(width: 60, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(.white)
-            }
-            Text(song.name).bold()
-            Spacer()
-            Text(song.time)
-        }.padding(20)
+        NavigationLink(
+            destination: PlayerView(album: album, song: song), label: {
+                    HStack{
+                            ZStack{
+                                Circle().frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                                Circle().frame(width: 20, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(.white)
+                            }
+                            Text(song.name).bold()
+                            Spacer()
+                            Text(song.time)
+                        }.padding(20)
+            
+            }).buttonStyle(PlainButtonStyle())
     }
     
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SongCell(song: Song(name: "Analogy", time: "3:11"))
+        ContentView()
     }
 }
