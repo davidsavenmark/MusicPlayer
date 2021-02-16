@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>882313510448-uvn3kva1oli2e7tbdrn4hahbg9tsb057.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.882313510448-uvn3kva1oli2e7tbdrn4hahbg9tsb057</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDFSW-fuPOatxH1kYrl5ZQBevTSnl5l_og</string>
+	<key>GCM_SENDER_ID</key>
+	<string>882313510448</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>David.BandApp-MusicPlayer</string>
+	<key>PROJECT_ID</key>
+	<string>bandapp-e4346</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bandapp-e4346.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:882313510448:ios:f333bda6ec48954401b7f5</string>
+</dict>
+</plist>

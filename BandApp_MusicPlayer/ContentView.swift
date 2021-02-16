@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+
 
 struct Album : Hashable {
     var id = UUID()
@@ -22,37 +24,8 @@ struct Song : Hashable {
 }
 
 struct ContentView: View {
-    
-    var albums = [Album(name: "Patterns", image: "1",
-                        songs: [Song(name:"Analogy", time: "3:11"),
-                                Song(name:"From Sunrise to Sunset", time: "4:13"),
-                                Song(name:"Above the Trees", time: "3:38"),
-                                Song(name:"Time Foreseen", time: "3:42"),
-                                Song(name:"Stranded Major", time: "4:44"),
-                                Song(name:"Defrost", time: "2:54")]),
-    
-    
-                  Album(name: "Collabs", image: "3",
-                                    songs:    [Song(name:"Ovodu ft. Librim, Irina Anis", time: "2:19"),
-                                              Song(name:"Sunday Love Story ft. Librim, Irina Anis", time: "4:03")]),
-                  
-                  Album(name: "Demos", image: "2",
-                                       songs: [Song(name:"Song 1", time: "3:11"),
-                                              Song(name:"Song 2", time: "3:11"),
-                                              Song(name:"Song 3", time: "3:11"),
-                                              Song(name:"Song 4", time: "3:11"),
-                                              Song(name:"Song 5", time: "3:11"),
-                                              Song(name:"Song 6", time: "3:11")])]
-                  
-                 
-    
-    
-    
-    
-    
-                 
-    
-    
+
+    @ObservedObject var data : MyData
     @State private var currentAlbum : Album?
     
     
@@ -61,7 +34,7 @@ struct ContentView: View {
             ScrollView{
                 ScrollView(.horizontal, showsIndicators: false, content: {
                     LazyHStack{
-                            ForEach(self.albums, id:\.self, content: {
+                        ForEach(self.data.albums, id:\.self, content: {
                             album in
                                 AlbumArt(album: album, isWithText: true).onTapGesture {
                                     self.currentAlbum = album
@@ -71,17 +44,21 @@ struct ContentView: View {
                             
                 })
                 LazyVStack{
-                    ForEach((self.currentAlbum?.songs ?? self.albums.first?.songs) ??
-                                        [Song(name:"Song 1", time: "3:11"),
-                                          Song(name:"Song 2", time: "3:11"),
-                                          Song(name:"Song 3", time: "3:11"),
-                                          Song(name:"Song 4", time: "3:11"),
-                                          Song(name:"Song 5", time: "3:11"),
-                                          Song(name:"Song 6", time: "3:11")],
-                    id: \.self,
-                    content: {
-                    song in
-                        SongCell(album: currentAlbum ?? albums.first!, song: song)
+                    if self.data.albums.first == nil {
+                        EmptyView()
+                        
+                    }else {
+                        ForEach((self.currentAlbum?.songs ?? self.data.albums.first?.songs) ??
+                                            [Song(name:"Song 1", time: "3:11"),
+                                              Song(name:"Song 2", time: "3:11"),
+                                              Song(name:"Song 3", time: "3:11"),
+                                              Song(name:"Song 4", time: "3:11"),
+                                              Song(name:"Song 5", time: "3:11"),
+                                              Song(name:"Song 6", time: "3:11")],
+                        id: \.self,
+                        content: {
+                        song in
+                            SongCell(album: currentAlbum ?? self.data.albums.first!, song: song)
                 })
                     
                 }
@@ -137,8 +114,5 @@ struct SongCell : View{
     
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+
 }

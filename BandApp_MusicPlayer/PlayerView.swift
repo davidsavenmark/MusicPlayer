@@ -7,10 +7,13 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 struct PlayerView : View {
     var album : Album
     var song : Song
+    
+
     
     @State var isPlaying : Bool = false
     
