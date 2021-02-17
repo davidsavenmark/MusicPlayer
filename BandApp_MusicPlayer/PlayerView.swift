@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import Firebase
+
 
 struct PlayerView : View {
     var album : Album

@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 
 
+
 struct Album : Hashable {
     var id = UUID()
     var name : String
