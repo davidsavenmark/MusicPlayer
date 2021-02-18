@@ -69,6 +69,8 @@ struct ContentView: View {
     }
 }
 
+}
+
 struct AlbumArt : View{
     var album : Album
     var isWithText : Bool
@@ -115,4 +117,4 @@ struct SongCell : View{
 }
 
 
-}
+
