@@ -21,6 +21,7 @@ struct BandApp_MusicPlayerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(data: data)
+                .ignoresSafeArea()
         }
     }
 }

@@ -28,7 +28,8 @@ class MyData : ObservableObject {
                     for song in songs {
                         let songName = song.value["name"] as? String ?? "error"
                         let songTime = song.value["time"] as? String ?? "error"
-                        songsArray.append(Song(name: songName, time: songTime))
+                        let songFile = song.value["file"] as? String ?? "error"
+                        songsArray.append(Song(name: songName, time: songTime, file: songFile))
                         }
                         
                     }

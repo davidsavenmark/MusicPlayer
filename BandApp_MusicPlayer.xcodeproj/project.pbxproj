@@ -13,7 +13,6 @@
 		9C3F964E25CB408D00106299 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F964D25CB408D00106299 /* ContentView.swift */; };
 		9C3F965025CB409200106299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C3F964F25CB409200106299 /* Assets.xcassets */; };
 		9C3F965325CB409200106299 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C3F965225CB409200106299 /* Preview Assets.xcassets */; };
-		9C3F965F25CB409200106299 /* BandApp_MusicPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F965E25CB409200106299 /* BandApp_MusicPlayerTests.swift */; };
 		9C3F966A25CB409200106299 /* BandApp_MusicPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F966925CB409200106299 /* BandApp_MusicPlayerUITests.swift */; };
 		9C6A1B2D25DC57B2006EE798 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A1B2C25DC57B2006EE798 /* Data.swift */; };
 		9C831E8125DB2F6C003E6BC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C831E8025DB2F6C003E6BC5 /* GoogleService-Info.plist */; };
@@ -434,7 +433,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C3F965F25CB409200106299 /* BandApp_MusicPlayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +585,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BandApp_MusicPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = 8P9XJ93HP6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BandApp_MusicPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -610,6 +609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"BandApp_MusicPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = 8P9XJ93HP6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BandApp_MusicPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
