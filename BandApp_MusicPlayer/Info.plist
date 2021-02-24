@@ -24,5 +24,7 @@
 	<array>
 		<string>audio</string>
 	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>Main</string>
 </dict>
 </plist>

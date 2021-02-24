@@ -51,7 +51,7 @@ struct PlayerView : View {
                             
                         }
                     
-                }.edgesIgnoringSafeArea(.all).frame(height: 200, alignment: .center)
+                }.edgesIgnoringSafeArea(.all).frame(height: 170, alignment: .center)
             }
         }.onAppear() {
             self.playSong()
