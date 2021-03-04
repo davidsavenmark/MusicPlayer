@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_BandApp_MusicPlayer_BandApp_MusicPlayerUITests : NSObject
+@end
+@implementation PodsDummy_Pods_BandApp_MusicPlayer_BandApp_MusicPlayerUITests
+@end

@@ -1,0 +1,6 @@
+framework module Pods_BandApp_MusicPlayer_BandApp_MusicPlayerUITests {
+  umbrella header "Pods-BandApp_MusicPlayer-BandApp_MusicPlayerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
