@@ -21,6 +21,8 @@ struct PlayerView : View {
     
     @State var isPlaying : Bool = false
     
+    
+    // Body of the musicplayer view, including its buttons.
     var body: some View {
         ZStack {
             Image(album.image).resizable().edgesIgnoringSafeArea(.all)
@@ -59,6 +61,7 @@ struct PlayerView : View {
         }
     }
     
+    // This is the function that basically loads your uploaded songs from storage in firebase, depending on what song you play. 
     func playSong () {
         let storage = Storage.storage().reference(forURL: self.song.file)
          storage.downloadURL { (url, error) in
