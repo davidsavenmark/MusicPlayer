@@ -21,8 +21,7 @@ class MyData : ObservableObject {
                     let image = document.data()["image"] as? String ?? "1"
                     print(image)
                     let songs = document.data()["songs"] as? [String : [String : Any]]
-                    
-                    
+                   
                     var songsArray = [Song]()
                     if let songs = songs {
                     for song in songs {
@@ -30,10 +29,8 @@ class MyData : ObservableObject {
                         let songTime = song.value["time"] as? String ?? "error"
                         let songFile = song.value["file"] as? String ?? "error"
                         songsArray.append(Song(name: songName, time: songTime, file: songFile))
-                        }
-                        
+                        }  
                     }
-                    
                     self.albums.append(Album(name: name, image: image, songs: songsArray))
                 }
             }else {
@@ -41,5 +38,4 @@ class MyData : ObservableObject {
             }
         }
     }
-    
 }
