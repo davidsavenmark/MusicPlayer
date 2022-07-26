@@ -8,7 +8,6 @@
 import SwiftUI
 import Firebase
 
-
 struct Album : Hashable {
     var id = UUID()
     var name : String
@@ -20,17 +19,14 @@ struct Song : Hashable {
     var id = UUID()
     var name : String
     var time : String
-    var file : String
-    
+    var file : String   
 }
 
 struct ContentView: View {
-
+    
     @ObservedObject var data : MyData
     @State private var currentAlbum : Album?
     
-    // This the body for the main view where you scroll through the albums and the songs -
-    // ( 32 - 66 )
     var body: some View {
         NavigationView{
             ScrollView{
@@ -42,8 +38,7 @@ struct ContentView: View {
                                     self.currentAlbum = album
                                 }
                     })
-                    }
-                            
+                    }           
                 })
                 LazyVStack{
                     if self.data.albums.first == nil {
@@ -58,16 +53,13 @@ struct ContentView: View {
                             SongCell(album: currentAlbum ?? self.data.albums.first!, song: song)
                 })
                     
-                }
-                    
-             //When the user is having the musicplayer display active, he/she can go back to the main navigation view where all the albums are by clicking on the navigationTitle far up to the left side of the screen.
+                }    
             }.navigationTitle("Sinemark")
         }
     }
 }
 
 }
-// The variables in the AlbumArt structure also gets called upon when the user enters the musicplayer view ( PlayerView ) in order to display the albumart and the background blur effect.
 struct AlbumArt : View{
     var album : Album
     var isWithText : Bool
@@ -83,16 +75,12 @@ struct AlbumArt : View{
             ZStack {
                 Blur(style: .dark)
                 Text(album.name).foregroundColor(.white)
-            }.frame(height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
+            }.frame(height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)      
         }
     }).frame(width: 170, height: 200,alignment: .center) .clipped().cornerRadius(20).shadow(radius: 10).padding(20)
-            
-                
+       
     }
 }
-
-// When a song gets clicked, it sends the user to the musicplayer which has its code and design in the PlayerView file.
 struct SongCell : View{
     var album : Album
     var song : Song
